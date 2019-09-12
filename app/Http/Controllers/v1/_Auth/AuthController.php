@@ -62,7 +62,6 @@ class AuthController extends BaseController
             // differents kind of responses. But let's return the 
             // below respose for now.
             return response()->json([
-                'data' => [],
                 'code' => 400,
                 'status' => 'username or password is wrong.'
             ], 400);
@@ -82,8 +81,7 @@ class AuthController extends BaseController
         // Bad Request response
         return response()->json([
             'code' => 400,
-            'status' => 'username or password is wrong.',
-            'data' => [],
+            'status' => 'username or password is wrong.'
         ], 400);
     }
 }

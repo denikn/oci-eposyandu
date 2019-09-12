@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCfUsersTable extends Migration
+class CreateCfRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateCfUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('cf_users', function (Blueprint $table) {
+        Schema::create('cf_roles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fullname', 150);
-            $table->string('username', 80);
-            $table->text('password');
-            $table->smallInteger('role');
-            $table->boolean('status')->default(0);
+            $table->string('name', 150);
+            $table->string('description', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateCfUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cf_users');
+        Schema::dropIfExists('cf_roles');
     }
 }

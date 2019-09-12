@@ -18,7 +18,12 @@ class cf_users extends Model implements AuthenticatableContract, AuthorizableCon
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'name', 
+        'fullname',
+        'username',
+        'password',
+        'role',
+        'status'
     ];
 
     /**

@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class cf_user_TableSeeder extends Seeder
+class cf_users_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class cf_user_TableSeeder extends Seeder
             'fullname' => 'Administrator',
             'username' => 'admin',
             'password' => Hash::make('123456'),
-            'role' => 'admin',
+            'role' => 1,
             'status' => 1
         ]);
     }

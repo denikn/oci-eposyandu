@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCfUsersTable extends Migration
+class CreateTrxImunisasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateCfUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('cf_users', function (Blueprint $table) {
+        Schema::create('trx_imunisasi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fullname', 150);
-            $table->string('username', 80);
-            $table->text('password');
-            $table->smallInteger('role');
-            $table->boolean('status')->default(0);
+            $table->date('visit_date');
+            $table->smallInteger('imunisasi_id');
+            $table->string('place', 255);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateCfUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cf_users');
+        Schema::dropIfExists('trx_imunisasi');
     }
 }
